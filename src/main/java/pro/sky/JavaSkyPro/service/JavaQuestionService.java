@@ -3,8 +3,6 @@ package pro.sky.JavaSkyPro.service;
 import pro.sky.JavaSkyPro.domain.Question;
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Set;
 
 public interface JavaQuestionService {
 
@@ -20,4 +18,5 @@ public interface JavaQuestionService {
 
     Question getRandomQuestion();
 
+    Question findQuestion(String question, String answer);
 }

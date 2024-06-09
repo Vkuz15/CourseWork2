@@ -9,9 +9,9 @@ import java.util.*;
 @Service
 public class ExaminerServiceImpl implements ExaminerService {
 
-    private final QuestionService questionService;
+    private final JavaQuestionService questionService;
 
-    public ExaminerServiceImpl(QuestionService questionService) {
+    public ExaminerServiceImpl(JavaQuestionService questionService) {
         this.questionService = questionService;
     }
 
@@ -22,7 +22,7 @@ public class ExaminerServiceImpl implements ExaminerService {
             throw new LimitOfQuestionsException("Достигнут лимит вопросов");
         }
         while (questions.size() < amount) {
-            questions.add(questionService.getRandomQuestion(questions));
+            questions.add(questionService.getRandomQuestion());
         }
         return questions;
     }

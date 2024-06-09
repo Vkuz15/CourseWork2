@@ -6,16 +6,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pro.sky.JavaSkyPro.domain.Question;
 import pro.sky.JavaSkyPro.service.JavaQuestionService;
-import pro.sky.JavaSkyPro.service.QuestionService;
 
 import java.util.Collection;
 
 @RestController
 @RequestMapping("/exam/java")
 public class JavaController {
-    private final QuestionService questionService;
+    private final JavaQuestionService questionService;
 
-    public JavaController(QuestionService questionService) {
+    public JavaController(JavaQuestionService questionService) {
         this.questionService = questionService;
     }
 
@@ -31,7 +30,7 @@ public class JavaController {
 
     @GetMapping(path = "/find")
     public Question findQuestion(@RequestParam String question, @RequestParam String answer) {
-        return questionService.findQuestion(question, answer);
+        return null;
     }
 
     @GetMapping()
